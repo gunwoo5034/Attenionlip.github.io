@@ -1,0 +1,39 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lip-Demo</title>
+  <style>
+    body{font-family:sans-serif;max-width:1000px;margin:0 auto;padding:24px}
+    h1{text-align:center}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+    video{width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+    figcaption{margin-top:4px;font-size:.9rem;text-align:center}
+  </style>
+</head>
+<body>
+  <h1>Silent-to-Speech Demo</h1>
+  <p>아래 영상은 <strong>LipVoicer</strong> 방식과 기존 방법을 비교한 결과입니다.</p>
+
+  <section class="grid">
+    <figure>
+      <video controls poster="assets/frame_gt.jpg">
+        <source src="assets/lrs3_gt.mp4" type="video/mp4" />
+      </video>
+      <figcaption>Ground-Truth</figcaption>
+    </figure>
+    <figure>
+      <video controls poster="assets/frame_ours.jpg">
+        <source src="assets/lrs3_lip.mp4" type="video/mp4" />
+      </video>
+      <figcaption>Our Method</figcaption>
+    </figure>
+  </section>
+
+  <footer style="margin-top:48px;text-align:center;font-size:.8rem">
+    © 2025 Lip-Demo • Built with GitHub Pages
+  </footer>
+</body>
+</html>
