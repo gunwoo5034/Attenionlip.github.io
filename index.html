@@ -65,12 +65,18 @@
       font-weight: 700;
       color: var(--text);
     }
+    /* Changed: use horizontal flex scrolling instead of grid */
     .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      display: flex;
+      flex-wrap: nowrap;
       gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary) transparent;
     }
     .video-card {
+      flex: 0 0 260px;
       background: var(--card);
       border-radius: 0.75rem;
       padding: 1rem;
@@ -122,7 +128,7 @@
     <div class="video-grid">
       <div class="video-card">
         <video src="sample1.mp4" controls preload="metadata"></video>
-        <div class="caption">Ground‑Truth</div>
+        <div class="caption">Ground-Truth</div>
       </div>
       <div class="video-card">
         <video src="sample2.mp4" controls preload="metadata"></video>
@@ -162,9 +168,9 @@
   <section id="method">
     <h2>How It Works</h2>
     <p style="max-width: 820px; margin: 0 auto 2rem;">
-      Given a silent video, a pre‑trained lip‑reading network first predicts the text.
-      A diffusion model then conditions on both the video and the text via classifier‑free guidance,
-      synthesizing a natural mel‑spectrogram. A neural vocoder converts the mel into high‑quality speech.
+      Given a silent video, a pre-trained lip-reading network first predicts the text.
+      A diffusion model then conditions on both the video and the text via classifier-free guidance,
+      synthesizing a natural mel-spectrogram. A neural vocoder converts the mel into high-quality speech.
     </p>
     <img src="method_diagram.png" alt="Pipeline diagram" class="diagram">
   </section>
