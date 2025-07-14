@@ -151,9 +151,9 @@
 
 <header>
   <a class="home-link" href="/" title="Home"><span>🏠</span></a>
-  <h1>LipAttention: Lipreading-Guided Attention Fusion for Diffusion Speech Generation from Silent Video</h1>
+  <h1>LipAttention: Lipreading-Guided Attention Fusion \n for Diffusion Speech Generation from Silent Video</h1>
   <p class="authors">Gunwoo&nbsp;Lee, Yoori&nbsp;Oh, Yoseob&nbsp;Han, </p>
-  <p class="affiliation">KAIST, Microsoft</p>
+  <p class="affiliation">Soongsil University, Seoul National University</p>
   <div class="pill-links">
     <a class="pill" href="#"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path></svg> arXiv</a>
     <a class="pill" href="#">💻 Code</a>
@@ -169,7 +169,7 @@
 <section class="abstract">
   <h2>Abstract</h2>
   <p>
-    In this paper, we introduce <strong>V2SFlow</strong>, a novel Video‑to‑Speech (V2S) framework designed to generate natural and intelligible speech directly from silent talking face videos. While recent V2S systems have shown promising results on constrained datasets with limited speakers and vocabularies, their performance often degrades on real‑world, unconstrained datasets due to the inherent variability and complexity of speech signals. To address these challenges, we decompose the speech signal into manageable subspaces (content, pitch, and speaker information), each representing distinct speech attributes, and predict them directly from the visual input. To generate coherent and realistic speech from these predicted attributes, we employ a rectified flow matching decoder built on a transformer architecture, which models different probabilistic pathways from random noise to the target speech distribution. Extensive experiments demonstrate that V2SFlow significantly outperforms state‑of‑the‑art methods, even surpassing the naturalness of ground‑truth utterances.
+    Video-to-speech aims to predict accurate spoken sentences and generate natural sounding speech from silent videos. Although various  approaches have been proposed, achieving both sentence level accuracy and high speech quality remains challenging. In this paper, we proposed a method to construct a unified conditional representation to maximize the performance of a diffusion based speech generation model. During training, ground-truth text is directly utilized, and an attention mechanism is applied to reinforce the correlation between lip movements and text, thereby improving sentence accuracy. During inference, pseudo text is generated via lipreading and used as guidance for the sampling process. Our model demonstrates superior performance on the LRS2 and LRS3 datasets, outperforming previous approaches particularly in Word Error Rate(WER) while maintaining high speech quality. Human evaluation via Mean Opinion Score(MOS) further comfirms the model's effectiveness.
   </p>
 </section>
 
