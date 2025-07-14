@@ -4,160 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LipAttention: Lipreading Guided Attention Diffusion Model</title>
-  <style>
-    :root {
-      --bg: #fafafa;
-      --text: #111827;
-      --primary: #1f2937;
-      --accent: #2563eb;
-      --card: #ffffff;
-      --shadow: rgba(0,0,0,0.06);
-    }
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      word-break:keep-all;
-    }
-    a{color:var(--accent);text-decoration:none;}
-    a:hover{text-decoration:underline;}
-
-    /* ----- Header & Title ----- */
-    header{
-      text-align:center;
-      padding:2rem 1rem 0;
-    }
-    .home-link{
-      display:inline-block;
-      margin-bottom:0.5rem;
-      font-size:1.25rem;
-    }
-    .home-link span{
-      display:inline-block;
-      transform:translateY(2px);
-    }
-    h1{
-      margin:0.5rem 0 0;
-      font-size:clamp(1.8rem,3vw,2.5rem);
-      font-weight:800;
-    }
-    .authors{
-      margin:0.5rem 0 0.75rem;
-      font-size:1.5rem;
-    }
-    .affiliation{font-style:italic;opacity:0.8;}
-    .pill-links{
-      display:flex;
-      justify-content:center;
-      gap:0.75rem;
-      margin:0.75rem 0 1.5rem;
-      flex-wrap:wrap;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:0.4rem;
-      background:var(--primary);
-      color:#fff;
-      padding:0.45rem 0.9rem;
-      border-radius:9999px;
-      font-weight:600;
-      font-size:0.875rem;
-    }
-    .pill svg{width:14px;height:14px;}
-
-    /* ----- Figures Row ----- */
-    .figures{
-      max-width:1100px;
-      margin:0 auto 2.5rem;
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:1.25rem;
-    }
-    .figures img{
-      max-width:350px;
-      width:100%;
-      border-radius:0.75rem;
-      box-shadow:0 4px 12px var(--shadow);
-    }
-
-    /* ----- Abstract ----- */
-    .abstract{
-      max-width:750px;
-      margin:0 auto 3.5rem;
-      padding:0 1rem;
-    }
-    .abstract h2{
-      text-align:center;
-      font-size:1.5rem;
-      font-weight:700;
-      margin:0 0 1rem;
-    }
-    .abstract p{margin:0; text-align:justify;}
-
-    /* ----- Comparison Table ----- */
-    .comparison{
-      max-width:1300px;
-      margin:0 auto 4rem;
-      padding:0 0.5rem;
-    }
-    .comparison h2{
-      text-align:center;
-      font-size:1.5rem;
-      font-weight:700;
-      margin:0 0 1.25rem;
-    }
-    .video-table{
-      width:100%;
-      border-collapse:separate;
-      border-spacing:0.75rem 0.85rem;
-    }
-    .video-table thead th{
-      font-weight:600;
-      font-size:0.9rem;
-      text-align:center;
-      padding:0.25rem 0.4rem;
-    }
-    .video-table tbody td{
-      text-align:center;
-      vertical-align:top;
-    }
-    .video-table video{
-      width:110px;
-      height:110px;
-      border-radius:0.5rem;
-      background:#000;
-    }
-    .transcript{
-      width:210px;
-      text-align:left;
-      font-size:0.875rem;
-    }
-
-    /* ------ Footer ------ */
-    footer{
-      text-align:center;
-      font-size:0.8rem;
-      color:#6b7280;
-      padding:2rem 1rem 2.5rem;
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
 <header>
-  <a class="home-link" href="/" title="Home"><span>🏠</span></a>
+  <!-- <a class="home-link" href="/" title="Home"><span>🏠</span></a> -->
   <h1>LipAttention: Lipreading-Guided Attention Fusion <br> for Diffusion Speech Generation from Silent Video</h1>
-  <p class="authors">Gunwoo&nbsp;Lee, Yoori&nbsp;Oh, Yoseob&nbsp;Han, </p>
-  <p class="affiliation">Soongsil University, Seoul National University</p>
-  <div class="pill-links">
+  <!-- <p class="authors">Gunwoo&nbsp;Lee, Yoori&nbsp;Oh, Yoseob&nbsp;Han, </p> -->
+  <p class="authors">Anonymous submission, </p>
+  <!-- <p class="affiliation">Soongsil University, Seoul National University</p> -->
+  <!-- <div class="pill-links">
     <a class="pill" href="#"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path></svg> arXiv</a>
     <a class="pill" href="#">💻 Code</a>
-  </div>
+  </div> -->
 </header>
 
 <!-- Figures Row -->
@@ -185,65 +45,92 @@
     <tbody>
       <!-- Row 1 -->
       <tr>
-        <td><video src="s2_silent.mp4" controls></video></td>
-        <td><video src="s2_gt.mp4" controls></video></td>
-        <td><video src="s2_vca-gan.mp4" controls></video></td>
-        <td><video src="s2_svts.mp4" controls></video></td>
-        <td><video src="s2_diff.mp4" controls></video></td>
-        <td><video src="s2_intel.mp4" controls></video></td>
-        <td><video src="s2_v2s_a.mp4" controls></video></td>
-        <td><video src="s2_v2s_v.mp4" controls></video></td>
-        <td><video src="s2_proposed.mp4" controls></video></td>
-        <td class="transcript">so the answer to the second question can we change</td>
+        <td><video src="MOS_sample_codec\LRS3\27lMmdmySb8_00006\Silent\00006.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\27lMmdmySb8_00006\GT\00006.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\27lMmdmySb8_00006\VCA-GAN\00006.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\27lMmdmySb8_00006\SVTS\00006.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\27lMmdmySb8_00006\DiffV2S\00006.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\27lMmdmySb8_00006\IntelligibleL2S\00006.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\27lMmdmySb8_00006\V2SFlow\00006.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\27lMmdmySb8_00006\V2SFlow-V\00006.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\27lMmdmySb8_00006\Proposed\00006.mp4" controls></video></td>
+        <td class="transcript"><b>We can't see it most of the time</b></td>
       </tr>
 
-      <!-- Row 2 (duplicate rows can be copied & modified) -->
       <tr>
-        <td><video src="s2_silent.mp4" controls></video></td>
-        <td><video src="s2_gt.mp4" controls></video></td>
-        <td><video src="s2_vca-gan.mp4" controls></video></td>
-        <td><video src="s2_svts.mp4" controls></video></td>
-        <td><video src="s2_diff.mp4" controls></video></td>
-        <td><video src="s2_intel.mp4" controls></video></td>
-        <td><video src="s2_v2s_a.mp4" controls></video></td>
-        <td><video src="s2_v2s_v.mp4" controls></video></td>
-        <td><video src="s2_proposed.mp4" controls></video></td>
-        <td class="transcript">so the answer to the second question can we change</td>
+        <td><video src="MOS_sample_codec\LRS3\2UStOghblfE_00002\Silent\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\2UStOghblfE_00002\GT\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\2UStOghblfE_00002\VCA-GAN\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\2UStOghblfE_00002\SVTS\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\2UStOghblfE_00002\DiffV2S\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\2UStOghblfE_00002\IntelligibleL2S\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\2UStOghblfE_00002\V2SFlow\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\2UStOghblfE_00002\V2SFlow-V\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\2UStOghblfE_00002\Proposed\00002.mp4" controls></video></td>
+        <td class="transcript"><b>I mean how do they form</b></td>
       </tr>
 
-      </tr>
-
-      <!-- Row 2 (duplicate rows can be copied & modified) -->
+   
       <tr>
-        <td><video src="s2_silent.mp4" controls></video></td>
-        <td><video src="s2_gt.mp4" controls></video></td>
-        <td><video src="s2_vca-gan.mp4" controls></video></td>
-        <td><video src="s2_svts.mp4" controls></video></td>
-        <td><video src="s2_diff.mp4" controls></video></td>
-        <td><video src="s2_intel.mp4" controls></video></td>
-        <td><video src="s2_v2s_a.mp4" controls></video></td>
-        <td><video src="s2_v2s_v.mp4" controls></video></td>
-        <td><video src="s2_proposed.mp4" controls></video></td>
-        <td class="transcript">so the answer to the second question can we change</td>
+        <td><video src="MOS_sample_codec\LRS3\BHY0FxzoKZE_00002\Silent\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\BHY0FxzoKZE_00002\GT\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\BHY0FxzoKZE_00002\VCA-GAN\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\BHY0FxzoKZE_00002\SVTS\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\BHY0FxzoKZE_00002\DiffV2S\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\BHY0FxzoKZE_00002\IntelligibleL2S\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\BHY0FxzoKZE_00002\V2SFlow\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\BHY0FxzoKZE_00002\V2SFlow-V\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\BHY0FxzoKZE_00002\Proposed\00002.mp4" controls></video></td>
+        <td class="transcript"><b>I tried everything</b></td>
       </tr>
 
       </tr>
 
-      <!-- Row 2 (duplicate rows can be copied & modified) -->
+    
       <tr>
-        <td><video src="s2_silent.mp4" controls></video></td>
-        <td><video src="s2_gt.mp4" controls></video></td>
-        <td><video src="s2_vca-gan.mp4" controls></video></td>
-        <td><video src="s2_svts.mp4" controls></video></td>
-        <td><video src="s2_diff.mp4" controls></video></td>
-        <td><video src="s2_intel.mp4" controls></video></td>
-        <td><video src="s2_v2s_a.mp4" controls></video></td>
-        <td><video src="s2_v2s_v.mp4" controls></video></td>
-        <td><video src="s2_proposed.mp4" controls></video></td>
-        <td class="transcript">so the answer to the second question can we change</td>
+        <td><video src="MOS_sample_codec\LRS3\9TPFLHvn024_00002\Silent\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\9TPFLHvn024_00002\GT\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\9TPFLHvn024_00002\VCA-GAN\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\9TPFLHvn024_00002\SVTS\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\9TPFLHvn024_00002\DiffV2S\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\9TPFLHvn024_00002\IntelligibleL2S\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\9TPFLHvn024_00002\V2SFlow\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\9TPFLHvn024_00002\V2SFlow-V\00002.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\9TPFLHvn024_00002\Proposed\00002.mp4" controls></video></td>
+        <td class="transcript"><b>There were no back doors</b></td>
       </tr>
 
-      <!-- Additional rows ... -->
+      </tr>
+
+
+
+      <tr>
+        <td><video src="MOS_sample_codec\LRS3\AO4In7d6XSc_00003\Silent\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\AO4In7d6XSc_00003\GT\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\AO4In7d6XSc_00003\VCA-GAN\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\AO4In7d6XSc_00003\SVTS\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\AO4In7d6XSc_00003\DiffV2S\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\AO4In7d6XSc_00003\IntelligibleL2S\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\AO4In7d6XSc_00003\V2SFlow\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\AO4In7d6XSc_00003\V2SFlow-V\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\AO4In7d6XSc_00003\Proposed\00003.mp4" controls></video></td>
+        <td class="transcript"><b>I love building robots</b></td>
+      </tr>
+
+      <tr>
+        <td><video src="MOS_sample_codec\LRS3\d6NKdnZvdoo_00003\Silent\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\d6NKdnZvdoo_00003\GT\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\d6NKdnZvdoo_00003\VCA-GAN\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\d6NKdnZvdoo_00003\SVTS\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\d6NKdnZvdoo_00003\DiffV2S\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\d6NKdnZvdoo_00003\IntelligibleL2S\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\d6NKdnZvdoo_00003\V2SFlow\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\d6NKdnZvdoo_00003\V2SFlow-V\00003.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS3\d6NKdnZvdoo_00003\Proposed\00003.mp4" controls></video></td>
+        <td class="transcript"><b>But it's a global phenomenon</b></td>
+      </tr>
+
+
     </tbody>
   </table>
 
@@ -257,29 +144,77 @@
     <tbody>
       <!-- Row 1 -->
       <tr>
-        <td><video src="s1_silent.mp4" controls></video></td>
-        <td><video src="s1_gt.mp4" controls></video></td>
-        <td><video src="s1_vca-gan.mp4" controls></video></td>
-        <td><video src="s1_diff.mp4" controls></video></td>
-        <td><video src="s1_intell.mp4" controls></video></td>
-        <td><video src="s1_v2s_a.mp4" controls></video></td>
-        <td><video src="s1_v2s_v.mp4" controls></video></td>
-        <td><video src="s1_proposed.mp4" controls></video></td>
-        <td class="transcript">but you know what</td>
+        <td><video src="MOS_sample_codec\LRS2\6331559613336179781_00029\Silent\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6331559613336179781_00029\GT\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6331559613336179781_00029\VCA-GAN\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6331559613336179781_00029\DiffV2S\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6331559613336179781_00029\IntelligibleL2S\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6331559613336179781_00029\V2SFlow\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6331559613336179781_00029\V2SFlow-V\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6331559613336179781_00029\Proposed\00029.mp4" controls></video></td>
+        <td class="transcript"><b>Something like a garden compost</b></td>
       </tr>
 
-      <!-- Row 2 (duplicate rows can be copied & modified) -->
       <tr>
-        <td><video src="s1_silent.mp4" controls></video></td>
-        <td><video src="s1_gt.mp4" controls></video></td>
-        <td><video src="s1_vca-gan.mp4" controls></video></td>
-        <td><video src="s1_diff.mp4" controls></video></td>
-        <td><video src="s1_intell.mp4" controls></video></td>
-        <td><video src="s1_v2s_a.mp4" controls></video></td>
-        <td><video src="s1_v2s_v.mp4" controls></video></td>
-        <td><video src="s1_proposed.mp4" controls></video></td>
-        <td class="transcript">but you know what</td>
+        <td><video src="MOS_sample_codec\LRS2\6332062124509813446_00018\Silent\00018.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6332062124509813446_00018\GT\00018.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6332062124509813446_00018\VCA-GAN\00018.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6332062124509813446_00018\DiffV2S\00018.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6332062124509813446_00018\IntelligibleL2S\00018.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6332062124509813446_00018\V2SFlow\00018.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6332062124509813446_00018\V2SFlow-V\00018.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6332062124509813446_00018\Proposed\00018.mp4" controls></video></td>
+        <td class="transcript"><b>It would have been Completely alien to the rest of london</b></td>
       </tr>
+
+      <tr>
+        <td><video src="MOS_sample_codec\LRS2\6356603997135874072_00027\Silent\00027.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6356603997135874072_00027\GT\00027.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6356603997135874072_00027\VCA-GAN\00027.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6356603997135874072_00027\DiffV2S\00027.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6356603997135874072_00027\IntelligibleL2S\00027.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6356603997135874072_00027\V2SFlow\00027.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6356603997135874072_00027\V2SFlow-V\00027.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6356603997135874072_00027\Proposed\00027.mp4" controls></video></td>
+        <td class="transcript"><b>That is a first</b></td>
+      </tr>
+
+      <tr>
+        <td><video src="MOS_sample_codec\LRS2\6358830508182123252_00029\Silent\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6358830508182123252_00029\GT\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6358830508182123252_00029\VCA-GAN\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6358830508182123252_00029\DiffV2S\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6358830508182123252_00029\IntelligibleL2S\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6358830508182123252_00029\V2SFlow\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6358830508182123252_00029\V2SFlow-V\00029.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6358830508182123252_00029\Proposed\00029.mp4" controls></video></td>
+        <td class="transcript"><b>So to do ballroom</b></td>
+      </tr>
+
+      <tr>
+        <td><video src="MOS_sample_codec\LRS2\6362913733590438579_00138\Silent\00138.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6362913733590438579_00138\GT\00138.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6362913733590438579_00138\VCA-GAN\00138.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6362913733590438579_00138\DiffV2S\00138.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6362913733590438579_00138\IntelligibleL2S\00138.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6362913733590438579_00138\V2SFlow\00138.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6362913733590438579_00138\V2SFlow-V\00138.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6362913733590438579_00138\Proposed\00138.mp4" controls></video></td>
+        <td class="transcript"><b>Some burn brightly for a year or two</b></td>
+      </tr>
+
+      <tr>
+        <td><video src="MOS_sample_codec\LRS2\6363654615448994597_00046\Silent\00046.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6363654615448994597_00046\GT\00046.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6363654615448994597_00046\VCA-GAN\00046.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6363654615448994597_00046\DiffV2S\00046.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6363654615448994597_00046\IntelligibleL2S\00046.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6363654615448994597_00046\V2SFlow\00046.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6363654615448994597_00046\V2SFlow-V\00046.mp4" controls></video></td>
+        <td><video src="MOS_sample_codec\LRS2\6363654615448994597_00046\Proposed\00046.mp4" controls></video></td>
+        <td class="transcript"><b>Here to reveal the secret to getting your hands on the trophy</b></td>
+      </tr>
+
 
       <!-- Additional rows ... -->
     </tbody>
